@@ -1,43 +1,136 @@
+import os
 import random
-
-from bs4 import BeautifulSoup
 import requests
-
+import json
 import discord
+import discord.ext.commands
+import asyncio
+import time
+import datetime
+from discord.utils import get
 
-genesis = "3612493"
-abberation = "3544133"
-extinction = "5329716"
-volcano = "4303118"
-valguero = "3749804"
-url = "https://www.battlemetrics.com/servers/ark/"
-output = ""
+from discord.ext import commands
+from discord.ext.commands import Bot as client
 
-class MyClient(discord.Client):
-    async def on_ready(self):
-        print('Logged on as', self.user, "|| Depresso is Online ||")
-        print("-------------------------")
-        await self.change_presence(activity=discord.Game(name='| Allen is an chicken shit'))
+@client.event
+async def on_ready(self):
+    print('Logged on as', self.user, "|| Depresso is Online ||")
+    print("-------------------------")
+    await self.change_presence(activity=discord.Game(name='| Reworking Depresso'))
 
 
+owner = 638494850861367296
+bot = commands.Bot(command_prefix='=')
 
-    async def on_message(self, message):
+
+@bot.command(aliases=["howgay"])
+async def _howgay(ctx):
+    print("howgay called")
+    num = random.randint(0, 100)
+    try:
+        user = ctx.mention[0]
+    except:
+        user = ctx.author
+    if user.id == owner:
+        num = 0
+    await ctx.send(f"{user} is {num}% gay.")
+
+    #@client.command(aliases=['test'])
+    #async def _test(self):
+    #    print('work')
+
+
+async def on_message(self, message):
         # don't respond to ourselves
-        if message.author == self.user:
-            return
-
-        if message.content.startswith("=td"):
-            await message.delete()
-            if message.author.id == 638494850861367296:
-                text = input("What'd you like to say?")
-                await message.channel.send(text)
-
-        if message.content.startswith("=ga"):
-            await message.delete()
-            role = 684169307248525409
-            if message.author.id == 638494850861367296:
-                await message.author.add_roles(message.author, role)
+    if message.author == self.user:
+        return
 
 
-client = MyClient()
-client.run('NjQ2OTg1ODY1ODA1MTY4NjUw.Xl0fuA.X6wCaJX1PtZ-1NHXTSdCMA7skRY')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bot.run('NjQ2OTg1ODY1ODA1MTY4NjUw.XqNPWg.xOYmDJO_STtSrZRQ6IeDwX4UG50')
