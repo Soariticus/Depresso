@@ -47,7 +47,7 @@ class battle:
 
     def htmlParsing(self):
         self.headers = {
-            "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjI1MDRhZjUyM2YxMGRiODUiLCJpYXQiOjE1ODM4Mjg5OTksIm5iZiI6MTU4MzgyODk5OSwiaXNzIjoiaHR0cHM6Ly93d3cuYmF0dGxlbWV0cmljcy5jb20iLCJzdWIiOiJ1cm46dXNlcjo3NDY2MiJ9.k01_dzwLtEzZCarGwT0THTA6y-fm-1NTOX7DxN_QsmQ" }
+            "Authorization": "AUTHKEYHERE" }
         self.request = requests.post(url=self.url, headers=self.headers)
         pageSoup = bs(self.request.text, "html.parser")
 
